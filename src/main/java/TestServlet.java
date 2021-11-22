@@ -1,6 +1,4 @@
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,14 +27,16 @@ public class TestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PrintWriter out = response.getWriter();
+		/*PrintWriter out = response.getWriter();
 		Date date = new Date();
 		out.println(HTML_START + "<h2>Hi There! test! testing 1234</h2><br/><h3>Date="+date +"</h3>"+ HTML_END); //TEST SCRIPT
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		response.getWriter().println("<input type=\"submit\" value=\"Continue\">");
 		if(request.getParameter("Continue") != null) {
 			response.sendRedirect("testAfterLogin.jsp");
-		}
+		}*/
+		response.sendRedirect(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 	}
 
