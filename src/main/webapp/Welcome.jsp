@@ -8,8 +8,9 @@
 <title>Robot Dev Team World</title>
 </head> 
 <body style="font-family: 'Trebuchet MS', sans-serif;">  
-<img src="fair.gif" alt="Robot Dev Team World" align="middle" style="width:1400px;height:400px">   
+<center><img src="fair.gif" alt="Robot Dev Team World" style="width:1400px;height:400px"></center>
 <h1 align="center"><i>Welcome to Robot Dev Team World!</i></h1>  
+<hr/>
 <ul>  
   <li>Check out our <i>thrilling</i> attractions here! <a href="Attractions.jsp"><b>Attractions</b></a></li>  
   <li>Learn about the history of Robot Dev Team World. <a href="AboutUs.jsp"><b>About Us</b></a></li>  

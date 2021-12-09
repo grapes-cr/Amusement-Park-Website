@@ -8,6 +8,18 @@
 </head>
 <body style="font-family: 'Trebuchet MS', sans-serif;">
 <h1 align=center>Reserve a Ticket Today!</h1>
-TO DO: This will be the page that calls the database for tickets. It will then create a new table of reserved tickets. Could ask a user to create a login? 
+<b>In order to reserve a ticket, please Login.</b>
+
+<hr/>  
+  
+<h3>Login to Robot Dev Team World</h3>  
+  
+ <br/>  
+<form action="loginTest.jsp" method="post">  
+Name:&emsp;&nbsp;&nbsp;<input type="text" name="name"/><br/><br/>  
+Password:<input type="password" name="password"/><br/><br/>  
+<input type="submit" value="Login"/>  
+</form>
+
 </body>
 </html>
