@@ -4,10 +4,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Robot Dev Team World: View Reservations</title>
+<title>Robot Dev Team World: View a Reservation</title>
 </head>
 <body style="font-family: 'Trebuchet MS', sans-serif;">
-<h1 align=center>Your Current Reservations</h1>
-to do: This page will call the current reservations of the user by calling the database table created in Reserve-a-Ticket. could prompt the user to log in to view their own?
+<h1 align=center>View Your Current Reservations</h1>
+<b>In order to view your tickets, please Login.</b>
+
+<hr/>  
+  
+<h3>Login to Robot Dev Team World</h3>  
+  
+ <br/>  
+<form action="ViewReservationLogin.jsp" method="post">  
+Name:&emsp;&nbsp;&nbsp;<input type="text" name="name"/><br/><br/>  
+Password:<input type="password" name="password"/><br/><br/>  
+<input type="submit" value="Login"/>  
+</form>
+
 </body>
 </html>
