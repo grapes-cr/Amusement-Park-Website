@@ -6,7 +6,7 @@
   </welcome-file-list>  
   <servlet>  
     <servlet-name>RobotDevTeamWorld</servlet-name>  
-    <servlet-class>RobotDevTeamWorld</servlet-class>  
+    <servlet-class>com.csun.RobotDevTeamWorld.servlet.RobotDevTeamWorld</servlet-class>  
   </servlet>  
   <servlet-mapping>  
     <servlet-name>RobotDevTeamWorld</servlet-name>  
