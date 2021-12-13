@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
+import com.csun.RobotDevTeamWorld.sql.SqlController;
+import com.csun.RobotDevTeamWorld.sql.construction.InsertBuilder;
 import com.csun.RobotDevTeamWorld.sql.construction.SelectBuilder;
 
 public abstract class DataCarrier {
@@ -22,6 +24,19 @@ public abstract class DataCarrier {
 	
 	public Iterator<Entry<String, Object>> getIter() {
 		return this.members.entrySet().iterator();
+	}
+	
+	/**
+	 * Post the contents of this Calendar Object to the SQL BD based on the InsertBuilder
+	 * @param to
+	 */
+	public void post(InsertBuilder to) {
+		to.setDataCarrier(this);
+		SqlController sql = SqlController.Get().open();
+		if(sql.isOpen()) {
+			sql.executeUpdate(to);
+			sql.close();
+		}
 	}
 	
 	public String getParams() {
