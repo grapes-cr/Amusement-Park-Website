@@ -5,5 +5,4 @@
 /.settings/
 /.project
 /.classpath
-/bin/
 /src/main/resources/application.properties
