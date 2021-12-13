@@ -1,12 +1,18 @@
 package com.csun.RobotDevTeamWorld.sql.construction;
 
+import com.csun.RobotDevTeamWorld.sql.construction.datacarrier.DataCarrier;
+
 /**
  * Entry Point for creation of Sanitized SQL Queries.
- * @author bbeagin
+ * @author Brendan Beagin
  *
  */
 public abstract class SQLBuilder {
 	
+	/**
+	 * Check validity of builder state. (Whether or not it is ready to be passed to the SqlController)
+	 * @return - validity
+	 */
 	public abstract boolean isValid();
 	public abstract String toString();
 	
@@ -47,15 +53,17 @@ public abstract class SQLBuilder {
 	 * @param cols - names of columns to fill (ordered)
 	 * @return the Query builder
 	 */
-	public static InsertBuilder insert(String table, String... cols) {
+	public static InsertBuilder insert(String table, DataCarrier data) {
 		table = SQLUtil.sanitize(table);
+		/*
 		String[] tmp = new String[cols.length];
 		for(int i=0;i<cols.length;i++) {
 			tmp[i] = SQLUtil.sanitize(cols[i]);
 			if(tmp[i].equals(""))
 				tmp[i] = null;
 		}
-		return table.equals("")?null: new InsertBuilder(table).colNames(cols);
+		*/
+		return table.equals("")?null: new InsertBuilder(table).setDataCarrier(data);
 	}
 	
 }

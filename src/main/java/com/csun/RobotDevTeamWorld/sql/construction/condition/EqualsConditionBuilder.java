@@ -5,7 +5,7 @@ import com.csun.RobotDevTeamWorld.sql.construction.SQLUtil;
 public class EqualsConditionBuilder extends ConditionBuilder {
 	
 	private String column;
-	private Integer value;
+	private Object value;
 	
 	@Override
 	public boolean isValid() {
@@ -14,7 +14,7 @@ public class EqualsConditionBuilder extends ConditionBuilder {
 
 	@Override
 	public String toString() {
-		return !isValid()?null: " WHERE "+column+"="+value.intValue();
+		return !isValid()?null: " WHERE "+column+"="+value.toString();
 	}
 	
 	public EqualsConditionBuilder setColumn(String column) {
@@ -24,7 +24,7 @@ public class EqualsConditionBuilder extends ConditionBuilder {
 		return this;
 	}
 	
-	public EqualsConditionBuilder setValue(int value) {
+	public EqualsConditionBuilder setValue(Object value) {
 		this.value = value;
 		return this;
 	}

@@ -3,14 +3,16 @@ package com.csun.RobotDevTeamWorld.sql.construction.datacarrier;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.csun.RobotDevTeamWorld.sql.SqlController;
-import com.csun.RobotDevTeamWorld.sql.construction.SQLBuilder;
+import com.csun.RobotDevTeamWorld.sql.construction.SelectBuilder;
 
 public class Ticket extends DataCarrier {
 	
 	private HashMap<String, Object> members;
+	protected static final String[] params = {"Id","Date"};
 	
 	public Ticket() { }
 	
@@ -38,11 +40,11 @@ public class Ticket extends DataCarrier {
 	
 	/**
 	 * Populate this Ticket Object from SQL DB.
-	 * @param from
+	 * @param from - The Query to match
 	 */
-	public void populate(SQLBuilder from) {
-		SqlController sql = SqlController.Get().open();
-		if(sql!=null) {
+	public void populate(SelectBuilder from) {
+		SqlController sql = SqlController.Get();
+		if(sql.open()!=null) {
 			try {
 				ResultSet resultSet = sql.executeQuery(from);
 				if(resultSet.next()) {
@@ -57,20 +59,37 @@ public class Ticket extends DataCarrier {
 	}
 	
 	/**
-	 * TODO: Post the Contents of this Ticket Object to the SQL DB.
-	 * @param to
+	 * Retrieve an array of Ticket Objects matching a SQL Query
+	 * @param from - The Query to match
+	 * @return - Array of Ticket Objects
 	 */
-	public void post(SQLBuilder to) {
-		SqlController sql = SqlController.Get().open();
+	public static Ticket[] matchingList(SelectBuilder from) {
+		ArrayList<Ticket> tickets = new ArrayList<Ticket>();
+		SqlController sql = SqlController.Get();
+		if(sql.open() != null) {
+			try {
+				ResultSet resultSet = sql.executeQuery(from);
+				while(resultSet.next()) {
+					Ticket t = new Ticket();
+					t.setID(resultSet.getInt("Id"));
+					t.setDate(resultSet.getDate("Date"));
+					tickets.add(t);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			sql.close();
+		}
 		
-		sql.close();
+		return tickets==null||tickets.isEmpty()?null : tickets.toArray(new Ticket[0]);
 	}
 	
 	@Override
 	public String toString() {
 		return "Ticket{" +
                 "id=" + this.getID().intValue() +
-                ", Date='" + this.getDate().toString() +
+                ", Date=" + this.getDate().toString() +
                 '}';
 	}
 
