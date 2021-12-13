@@ -35,5 +35,15 @@
       </table>
       <br>
       </center>
+
+<center>
+ <button onclick="window.location.href='http://localhost:8080/RobotDevTeamWorld/Welcome.jsp';">
+      Welcome Page
+    </button>
+
+ <button onclick="window.location.href='http://localhost:8080/RobotDevTeamWorld/Reserve-a-Ticket.jsp';">
+      Reserve Another Ticket
+    </button>
 </body>
 </html>
+
