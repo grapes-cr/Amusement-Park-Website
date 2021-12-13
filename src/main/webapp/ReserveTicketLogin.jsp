@@ -12,7 +12,7 @@
 <hr/>
 <p><b>Available tickets:</b></p><br>
 
-<form action="CartTest.jsp" method="post">
+<form action="Checkout.jsp" method="post">
  <table border = "1" width="50%" height="100%" align="center" style="font-size:30px">
          <tr>
             <th>Date</th> 
