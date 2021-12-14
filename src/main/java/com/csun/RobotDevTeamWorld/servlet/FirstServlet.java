@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.csun.RobotDevTeamWorld.sql.construction.SQLBuilder;
+import com.csun.RobotDevTeamWorld.sql.construction.datacarrier.Calendar;
+
 /**
  * Servlet implementation class FirstServlet
  */
@@ -27,7 +30,8 @@ public class FirstServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+
 	}
 
 	/**
@@ -35,7 +39,16 @@ public class FirstServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		
+		Calendar[] calendar = Calendar.matchingList(SQLBuilder.select("Calendar"));
+
+		request.setAttribute("lol", calendar);
+		request.getRequestDispatcher("ReserveTicketLogin.jsp").forward(request, response);
+			
+		
+			
 	}
+	
 
 }

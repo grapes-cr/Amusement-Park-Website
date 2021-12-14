@@ -19,21 +19,30 @@
             <th>Quantity</th>
          </tr>
          <tr>
-            <td>12/6</td>
-            <td>10 AM - 6 PM</td>
-            <td>$150</td> 
+          <td>2021-12-17</td>
+            <td>8-8</td>
+            <td>175.0</td> 
             <td>1</td>
            
          </tr>
          <tr>
-            <td>12/8</td>
-            <td>11 AM - 12 AM</td>
-            <td>$200</td>
+            <td>2021-12-18</td>
+            <td>8-8</td>
+            <td>175.0</td>
             <td>1</td>
-            
          </tr>
       </table>
       <br>
       </center>
+
+<center>
+ <button onclick="window.location.href='http://localhost:8080/RobotDevTeamWorld/Welcome.jsp';">
+      Return to Welcome Page
+    </button>
+
+ <button onclick="window.location.href='http://localhost:8080/RobotDevTeamWorld/Reserve-a-Ticket.jsp';">
+      Purchase and Reserve Another Ticket
+    </button>
 </body>
 </html>
+

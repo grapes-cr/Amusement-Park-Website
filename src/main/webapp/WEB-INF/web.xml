@@ -7,9 +7,21 @@
   <servlet>  
     <servlet-name>RobotDevTeamWorld</servlet-name>  
     <servlet-class>com.csun.RobotDevTeamWorld.servlet.RobotDevTeamWorld</servlet-class>  
-  </servlet>  
+  </servlet> 
+  <servlet>
+  	<servlet-name>FirstServlet</servlet-name>
+  	<servlet-class>com.csun.RobotDevTeamWorld.servlet.FirstServlet</servlet-class> 
+  </servlet>
+   
   <servlet-mapping>  
     <servlet-name>RobotDevTeamWorld</servlet-name>  
     <url-pattern>/Welcome</url-pattern>  
-  </servlet-mapping>  
+  </servlet-mapping>
+  
+  <servlet-mapping>  
+    <servlet-name>FirstServlet</servlet-name>  
+    <url-pattern>/Request</url-pattern>  
+  </servlet-mapping> 
+  
+   
 </web-app>  

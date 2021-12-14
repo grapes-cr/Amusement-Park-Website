@@ -12,7 +12,7 @@
 
 <h8 style="font-family: 'Helvetica', sans-serif; color:Red; font-size: 15px;" align = center>
     READ BEFORE CONTINUING: Due to current CDC Guidelines and the on going gloabal pandameic,
-    all visiters must reserve tickets. Please be aware that there is a limit of (insert number here)
+    all visiters must reserve tickets. Please be aware that there is a limit of <b>5</b>
     tickets per visitor per day. To reserve tickets see "Reserve a Ticket" in <a href="Welcome.jsp"><b>Welcome Page</b></a> 
     or.<a href="Reserve-a-Ticket.jsp"><b>click here</b></a>
     Thank you and enjoy your time here at Robot Dev Team World!
