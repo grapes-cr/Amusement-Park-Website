@@ -1,3 +1,5 @@
+<%@page import="com.csun.RobotDevTeamWorld.sql.construction.SQLBuilder"%>
+<%@page import="com.csun.RobotDevTeamWorld.sql.construction.datacarrier.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -20,19 +22,19 @@
             <th>Price</th>
             <th></th>
          </tr>
-         <tr>
-            <td>12/6</td>
-            <td>10 AM - 6 PM</td>
-            <td>$150</td> 
-            <td><input type="checkbox" id="c1" name="c1" value="ticket1"></td>
-         </tr>
-         <tr>
-            <td>12/8</td>
-            <td>11 AM - 12 AM</td>
-            <td>$200</td>
-            <td><input type="checkbox" id="c2" name="c2" value="ticket2"></td>
-            
-         </tr>
+         <%
+         	Calendar[] calendar = Calendar.matchingList(SQLBuilder.select("Calendar"));
+         	if(calendar != null)
+         		for(int i = 0; i < Math.min(10,calendar.length);i++){
+         			Calendar day = calendar[i];
+	         		if(day != null && day.isValid()){
+	         			out.print("<tr><td>"+day.getDate().toString()+"</td>");
+	             		out.print("<td>"+day.getHrs()[0].toString()+" - "+day.getHrs()[1].toString()+"</td>");
+	             		out.print("<td>$"+day.getPrice().toString()+"</td>");
+	             		out.print("<td><input type=\"checkbox\" id=\"c"+i+"\" name=\"c"+i+"\" value=\""+day.getDate().toString()+"\"></td>");
+	         		}
+         		}
+         %>
       </table>
   <br>
        <center><input type="submit" value="Checkout"></center>

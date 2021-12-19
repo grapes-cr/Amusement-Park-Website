@@ -15,10 +15,10 @@
 <h3>Login to Robot Dev Team World</h3>  
   
  <br/>  
-<form action="ReserveTicketLogin.jsp" method="post">  
-Name:&emsp;&nbsp;&nbsp;<input type="text" name="name"/><br/><br/>  
-Password:<input type="password" name="password"/><br/><br/>  
-<input type="submit" value="Login"/>  
+<form action="ReserveTicketLogin.jsp" method="post">
+Name:&emsp;&nbsp;&nbsp;<input type="text" name="name"/><br/><br/>
+Password:<input type="password" name="password"/><br/><br/>
+<input type="submit" value="Login"/>
 </form>
 
 </body>
