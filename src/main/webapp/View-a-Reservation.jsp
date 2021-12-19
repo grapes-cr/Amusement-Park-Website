@@ -16,8 +16,7 @@
   
  <br/>  
 <form action="ViewReservationLogin.jsp" method="post">  
-Name:&emsp;&nbsp;&nbsp;<input type="text" name="name"/><br/><br/>  
-Password:<input type="password" name="password"/><br/><br/>  
+Ticket ID:&emsp;&nbsp;&nbsp;<input type="number" id="ID" name= "ID" min="0" max="<% out.print(Integer.MAX_VALUE); %>"/><br/><br/>
 <input type="submit" value="Login"/>  
 </form>
 
