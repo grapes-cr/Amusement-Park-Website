@@ -34,6 +34,8 @@
 	             		out.print("<td><input type=\"checkbox\" id=\"c"+i+"\" name=\"c"+i+"\" value=\""+day.getDate().toString()+"\"></td>");
 	         		}
          		}
+         	else
+         		out.print("<h1><center>Database hybernating, please wait for a moment and refresh page</center></h1>");
          %>
       </table>
   <br>

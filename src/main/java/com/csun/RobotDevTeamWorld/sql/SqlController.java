@@ -111,8 +111,10 @@ public class SqlController {
 	 */
 	public ResultSet executeQuery(SelectBuilder from) {
 		try {
-			PreparedStatement queryStatement = connection.prepareStatement(from.toString());
-			return queryStatement.executeQuery();
+			if(connection != null) {
+				PreparedStatement queryStatement = connection.prepareStatement(from.toString());
+				return queryStatement.executeQuery();
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

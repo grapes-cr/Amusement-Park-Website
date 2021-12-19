@@ -3,21 +3,5 @@
   <display-name>BasicWebApplication</display-name>  
   <welcome-file-list>  
     <welcome-file>Welcome.jsp</welcome-file>   
-  </welcome-file-list>  
-  <servlet>  
-    <servlet-name>RobotDevTeamWorld</servlet-name>  
-    <servlet-class>com.csun.RobotDevTeamWorld.servlet.RobotDevTeamWorld</servlet-class>  
-  </servlet>
-  <servlet>  
-    <servlet-name>ReservTicketRequest</servlet-name>  
-    <servlet-class>com.csun.RobotDevTeamWorld.servlet.FirstServlet</servlet-class>  
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>RobotDevTeamWorld</servlet-name>  
-    <url-pattern>/Welcome</url-pattern>  
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ReservTicketRequest</servlet-name>  
-    <url-pattern>/Request1</url-pattern>  
-  </servlet-mapping>
+  </welcome-file-list>
 </web-app>  

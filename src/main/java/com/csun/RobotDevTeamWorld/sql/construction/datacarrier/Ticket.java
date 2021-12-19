@@ -43,8 +43,8 @@ public class Ticket extends DataCarrier {
 	 * @param from - The Query to match
 	 */
 	public void populate(SelectBuilder from) {
-		SqlController sql = SqlController.Get();
-		if(sql.open()!=null) {
+		SqlController sql = SqlController.Get().open();
+		if(sql.isOpen()) {
 			try {
 				ResultSet resultSet = sql.executeQuery(from);
 				if(resultSet.next()) {

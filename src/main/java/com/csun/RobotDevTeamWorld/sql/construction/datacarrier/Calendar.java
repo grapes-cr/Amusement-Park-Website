@@ -79,8 +79,8 @@ public class Calendar extends DataCarrier {
 	 */
 	public static Calendar[] matchingList(SelectBuilder from) {
 		ArrayList<Calendar> calendars = new ArrayList<Calendar>();
-		SqlController sql = SqlController.Get();
-		if(sql.open() != null) {
+		SqlController sql = SqlController.Get().open();
+		if(sql.isOpen()) {
 			try {
 				ResultSet resultSet = sql.executeQuery(from);
 				while(resultSet.next()) {
@@ -95,7 +95,8 @@ public class Calendar extends DataCarrier {
 			}
 			
 			sql.close();
-		}
+		} else
+			return null;
 		
 		return calendars==null||calendars.isEmpty()?null : calendars.toArray(new Calendar[0]);
 	}

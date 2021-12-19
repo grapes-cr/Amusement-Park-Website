@@ -25,18 +25,21 @@
             <th>Price</th>
          </tr>
          <%
-         	if(id != null) {
+         	if(id != null && id >= 0) {
          		Ticket ticket = new Ticket();
          		ticket.populate(SQLBuilder.select("Tickets").setCondition(ConditionBuilder.equals().setColumn("Id").setValue(id)));
          		Calendar[] calendar = Calendar.matchingList(SQLBuilder.select("Calendar"));
-         		for(Calendar day : calendar)
-	         		if(ticket.isValid() && day.isValid() && day.getDate().equals(ticket.getDate())) {
-	         			out.print("<tr><td>"+ticket.getID()+"</td>");
-	         			out.print("<td>"+ticket.getDate()+"</td>");
-	         			out.print("<td>"+day.getHrs()[0]+" - "+day.getHrs()[1]+"</td>");
-	         			out.print("<td>$"+day.getPrice()+"</td></tr>");
-	         			break;
-	         		}
+         		if(ticket.isValid() && calendar != null) {
+	         		for(Calendar day : calendar)
+		         		if(day.isValid() && day.getDate().equals(ticket.getDate())) {
+		         			out.print("<tr><td>"+ticket.getID()+"</td>");
+		         			out.print("<td>"+ticket.getDate()+"</td>");
+		         			out.print("<td>"+day.getHrs()[0]+" - "+day.getHrs()[1]+"</td>");
+		         			out.print("<td>$"+day.getPrice()+"</td></tr>");
+		         			break;
+		         		}
+         		} else
+         			out.print("<h1><center>Invalid Id or database is hybernating, please wait for a moment and refresh page</center></h1>");
          	}
          %>
    </table>
