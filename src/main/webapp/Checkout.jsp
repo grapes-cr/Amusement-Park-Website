@@ -68,5 +68,8 @@
       </table>
       <br>
       </center>
+      <center><p><b>Before checking out, be sure to write your ticket IDs down!</b></p></center>
+      <form action="Welcome.jsp" method="post">
+      <center><input type="submit" value="Checkout and Return to Welcome Page"/></center>
 </body>
 </html>
