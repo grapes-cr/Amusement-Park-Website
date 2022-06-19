@@ -25,5 +25,7 @@ Running RobotDevTeamWorld.java:
 ~~*Currently the web code is only called in the doGet() method of TestServlet.java. None of the other files (like the .jsp and .html are called).*~~
  
 **UPDATE 11/22/21:** Servlet now calls Welcome Page *Welcome.jsp* and has a clickable link that calls the "next page" *SecondPage.jsp* :)
+
 **UPDATE 11/29/21:** Servlet code is cleaned up + commented. Added design to the Welcome page. Welcome.jsp now calls 4 different .jsp files when links are clicked.
+
 **UPDATE 12/11/21:** All main .jsp files are created, most UI designs are done. DB integrated but not merged with main.
